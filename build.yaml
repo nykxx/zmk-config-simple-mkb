@@ -1,0 +1,13 @@
+---
+include:
+  - board: xiao_ble//zmk
+    shield: MKB_L rgbled_adapter
+    artifact-name: MKB_L
+
+  - board: xiao_ble//zmk
+    shield: MKB_R rgbled_adapter
+    artifact-name: MKB_R
+
+  - board: xiao_ble//zmk
+    shield: settings_reset
+
