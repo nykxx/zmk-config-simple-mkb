@@ -1,4 +1,4 @@
-if SHIELD_MKB_R
+if SHIELD_MKB_DONGLE
     config ZMK_SPLIT_ROLE_CENTRAL
         default y
 
@@ -9,20 +9,20 @@ if SHIELD_MKB_R
         default y
 
     config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-        default 1
+        default 2
 
     # Max pair + 1 (+1 for peripheral)
     config BT_MAX_CONN
-        default 6
+        default 7
 
     # Set this to the same number as BT_MAX_CONN
     config BT_MAX_PAIRED
-    default 6
+    default 7
 
 
 endif 
 
-if SHIELD_MKB_L || SHIELD_MKB_R
+if SHIELD_MKB_L || SHIELD_MKB_R || SHIELD_MKB_DONGLE
     config ZMK_SPLIT
         default y
 

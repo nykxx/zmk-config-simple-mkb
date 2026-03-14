@@ -63,11 +63,6 @@
     };
 };
 
-&trackball_right_listener {
-    status = "okay";
+&trackball_split_right {
     device = <&trackball_right>;
-};
-
-&trackball_left_listener {
-  status = "okay";
 };

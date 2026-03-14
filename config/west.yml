@@ -6,7 +6,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: badjeff
       url-base: https://github.com/badjeff
-
+    - name: TakeshiAkehi
+      url-base: https://github.com/TakeshiAkehi
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -18,7 +19,9 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: zmk-0.4
-
+    - name: zmk-module-xiaord
+      remote: TakeshiAkehi
+      revision: main
   self:
     path: config
     
