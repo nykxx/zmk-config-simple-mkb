@@ -100,6 +100,7 @@
 
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-charlieplex";
+		label = "KSCAN";
 		wakeup-source;
 		interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 	};
@@ -154,7 +155,8 @@
 	trackball_right_listener: trackball_right_listener {
 		compatible = "zmk,input-listener";
 		status = "disabled";
-                device = <&trackball_split_right>;
+		device = <&trackball_split_right>;
+
 		trackball_scroller: scroller {};
 	};
 

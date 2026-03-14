@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: TakeshiAkehi
-      url-base: https://github.com/TakeshiAkehi
+    - name: nykxx
+      url-base: https://github.com/nykxx
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -20,7 +20,7 @@ manifest:
       remote: badjeff
       revision: zmk-0.4
     - name: zmk-module-xiaord
-      remote: TakeshiAkehi
+      remote: nykxx
       revision: main
   self:
     path: config
