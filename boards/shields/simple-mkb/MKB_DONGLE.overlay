@@ -26,7 +26,7 @@
 // &home_button_3 { symbol = <ICON_MUTE>; };       /*  3 o'clock */
 // &home_button_4 { symbol = <ICON_VOLUME_MID>; }; /*  4 o'clock */
 // &home_button_5 { symbol = <ICON_NEXT>; };       /*  5 o'clock */
-// &home_button_6 { symbol = <ICON_PLAY>; };       /*  6 o'clock */
+&home_button_6 { symbol = <ICON_PLAY>; };       /*  6 o'clock */
 // &home_button_7 { symbol = <ICON_PREV>; };       /*  7 o'clock */
 // &home_button_8 { symbol = <ICON_WARNING>; };    /*  8 o'clock */
 // &home_button_9 { symbol = <ICON_USB>; };        /*  9 o'clock */
@@ -43,7 +43,7 @@
         INPUT_VIRTUAL_POS_10   INPUT_VIRTUAL_POS_11
     >;
     bindings = <
-        &bootloader            &kp CAPSLOCK
+        &bootloader            &calc
         &kp C_VOL_UP           &kp C_MUTE
         &kp C_VOL_DN           &kp C_NEXT
         &kp C_PLAY             &kp C_PREV

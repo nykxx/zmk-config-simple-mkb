@@ -151,6 +151,16 @@
                 <&macro_release>,
                 <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
         };
+
+        // Exec Calculator.exe
+        calc: exec_calc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LGUI>
+                , <&macro_tap &kp C &kp A &kp L &kp C &kp RET>
+                ;
+        };
     };
 
     /**************************************************************************/
