@@ -27,21 +27,22 @@
     quick-tap-ms = <150>;
 };
 
-&trackball_right_listener { 
-  input-processors = <&zip_temp_layer MOUSE 5000>;
-};
+// &trackball_right_listener { 
+//   input-processors = <&zip_temp_layer MOUSE 5000>;
+// };
 
-&trackball_scroller {
-    layers = <MARK>;
-    input-processors =
-        <&zip_xy_scaler 1 25 &zip_xy_to_scroll_mapper>,
-        <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
-};
+// &trackball_scroller {
+//     layers = <MARK>;
+//     input-processors =
+//         <&zip_xy_scaler 1 25 &zip_xy_to_scroll_mapper>,
+//         <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
+// };
 
-&trackball_left_listener {
-   input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-                      <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
-};
+// &trackball_left_listener {
+//    input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
+//                       <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+// };
+
 // キー入力から400ms間はAMLを抑制(AML誤発動防止)
 &zip_temp_layer {
     excluded-positions = <

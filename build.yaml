@@ -2,7 +2,7 @@
 include:
 
   - board: xiao_ble//zmk
-    shield: xiaord MKB_DONGLE
+    shield: MKB_DONGLE
     artifact-name: MKB_DONGLE
 
   - board: xiao_ble//zmk
@@ -15,4 +15,5 @@ include:
 
   - board: xiao_ble//zmk
     shield: settings_reset
-
+    artifact-name: settings_reset_xiao
+    
