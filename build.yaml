@@ -2,7 +2,7 @@
 include:
 
   - board: xiao_ble//zmk
-    shield: MKB_DONGLE
+    shield: MKB_DONGLE rgbled_adapter xiaord
     artifact-name: MKB_DONGLE
 
   - board: xiao_ble//zmk
