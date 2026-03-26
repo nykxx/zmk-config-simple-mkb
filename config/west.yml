@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: amgskobo
+      url-base: https://github.com/amgskobo
     - name: nykxx
       url-base: https://github.com/nykxx
   projects:
@@ -22,6 +24,9 @@ manifest:
     - name: zmk-module-xiaord
       remote: nykxx
       revision: main
+    - name: zmk-input-inertia
+      remote: amgskobo
+      revision: main  
   self:
     path: config
     

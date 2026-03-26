@@ -23,8 +23,9 @@
 
 &lt {
     flavor = "balanced";
-    tapping-term-ms = <150>;
+    tapping-term-ms = <300>;
     quick-tap-ms = <150>;
+    hold-trigger-on-release;
 };
 
 // &trackball_right_listener { 
@@ -270,7 +271,7 @@
             bindings = <
 &kp ESC            &kp Q     &kp L      &kp U     &kp COMMA    &kp PERIOD          &kp F         &kp W         &kp R      &kp Y      &kp P      &kp SLASH
 &mt LCTRL TAB      &kp E     &kp I      &kp A     &kp O        &kp MINUS           &kp K         &kp T         &kp N      &kp S      &kp H      &mt RCTRL SQT
-&kp LSHFT          &kp Z     &kp X      &kp C     &kp V        &kp EQUAL           &kp G         &kp D         &kp M      &kp J      &kp B      &mt RSHFT SEMI
+&kp LSHFT          &kp J     &kp X      &kp C     &kp V        &kp EQUAL           &kp G         &kp D         &kp M      &kp Z      &kp B      &mt RSHFT SEMI
 &ime_alt LALT F14  &kp LGUI  &kp LALT             &td_spc_mac  &lt MARK SPACE      &lt MARK RET  &td_bspc_mac             &tog NUM   &kp K_APP  &ime_alt RALT F13
 &kp LEFT           &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                      &kp HOME      &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
                                         &none                                                                  &none
