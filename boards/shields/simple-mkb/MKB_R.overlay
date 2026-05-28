@@ -71,3 +71,7 @@
 &trackball_left_listener {
   status = "okay";
 };
+
+&right_encoder {
+    status = "okay";
+};

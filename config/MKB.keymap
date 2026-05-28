@@ -5,7 +5,7 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 #define DEF 0
 #define MAC 1
@@ -15,6 +15,7 @@
 #define NUM 5
 #define MOUSE 6
 #define BT 7
+ #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 &mt {
     flavor = "balanced";
@@ -23,8 +24,9 @@
 
 &lt {
     flavor = "balanced";
-    tapping-term-ms = <150>;
+    tapping-term-ms = <300>;
     quick-tap-ms = <150>;
+    hold-trigger-on-release;
 };
 
 &trackball_right_listener { 
@@ -234,6 +236,22 @@
             toggle-mode = "on";
             label = "TOG_ON";
         };
+
+        scroll_up_down: mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
+            tap-ms = <20>;
+        };
+
+        scroll_right_left: mouse_wheel_right_left {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+
+            tap-ms = <20>;
+        };
     };
 
     /**************************************************************************/
@@ -251,7 +269,7 @@
 &kp LEFT           &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                    &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
                                         &none                                                            &none
             >;
-
+            sensor-bindings = <&scroll_up_down  &inc_dec_kp RIGHT LEFT>;
         };
 
         mac_layer {
@@ -264,7 +282,7 @@
 &kp LEFT           &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                      &kp HOME      &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
                                         &none                                                                  &none
             >;
-
+            sensor-bindings = <&scroll_up_down &scroll_right_left>;
         };
 
         mark_layer {
@@ -277,7 +295,7 @@
 &kp LEFT   &kp UP         &kp SPACE   &kp DOWN    &kp RIGHT                                         &kp HOME    &kp PG_UP   &kp ENTER     &kp PG_DN   &kp END
                                       &none                                                                     &none
             >;
-
+             sensor-bindings = <&scroll_up_down &scroll_right_left>;
         };
 
         function_layer {
@@ -290,7 +308,7 @@
 &kp LEFT    &kp UP     &kp SPACE  &kp DOWN   &kp RIGHT                         &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
                                   &none                                                  &none
             >;
-
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         macfunction_layer {
@@ -303,7 +321,7 @@
 &kp LEFT    &kp UP     &kp SPACE  &kp DOWN   &kp RIGHT                         &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
                                   &none                                                  &none
             >;
-
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         num_layer {
@@ -316,7 +334,7 @@
 &kp LEFT    &kp UP     &kp SPACE  &kp DOWN   &kp RIGHT                                                   &kp HOME   &kp PG_UP  &kp ENTER  &kp PG_DN        &kp END
                                   &none                                                                             &none
             >;
-
+            sensor-bindings = <&scroll_up_down &scroll_right_left>;
         };
 
         mouse_layer {
@@ -329,7 +347,7 @@
 &kp LEFT        &kp UP  &kp SPACE  &kp DOWN  &kp RIGHT                                      &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN                &kp END
                                    &kp A                                                              &kp B
             >;
-
+            sensor-bindings = <&scroll_up_down &scroll_right_left>;
         };
 
         bt_layer {
@@ -342,7 +360,7 @@
 &kp LEFT    &kp UP        &kp SPACE     &kp DOWN      &kp RIGHT                                       &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
                                         &kp A                                                                   &kp B
             >;
-
+            sensor-bindings = <&scroll_up_down &scroll_right_left>;
         };
     };
 };

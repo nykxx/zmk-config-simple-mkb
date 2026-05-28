@@ -60,3 +60,7 @@
 &trackball_split {
     device = <&trackball_left>;
 };
+
+&left_encoder {
+    status = "okay";
+};
