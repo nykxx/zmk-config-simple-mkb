@@ -48,7 +48,7 @@
         irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <800>;
         // swap-xy; /* optional */
-        // invert-x; /* optional */
+        invert-x; /* optional */
         invert-y; /* optional */
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
