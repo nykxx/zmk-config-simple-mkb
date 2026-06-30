@@ -20,8 +20,8 @@
 
 // AML発動までの移動量定義
 / {
-    zip_drag_scroll: zip_drag_scroll {
-        compatible = "zmk,behavior-drag-scroll";
+    zip_aml_threshold: zip_aml_threshold {
+        compatible = "zmk,input-processor-zip-aml-threshold";
         #input-processor-cells = <0>;
         min-drag-distance = <1200>;
     };
@@ -58,7 +58,7 @@
         layers = <MOUSE>, <MOUSE_NUM>;
         input-processors = <&zip_inertia>;
     };
-    input-processors = <&zip_drag_scroll>, <&zip_temp_layer MOUSE 5000>, <&zip_inertia>;
+    input-processors = <&zip_aml_threshold>, <&zip_temp_layer MOUSE 5000>, <&zip_inertia>;
 };
 
 &trackball_scroller {
