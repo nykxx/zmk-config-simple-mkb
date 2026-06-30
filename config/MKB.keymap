@@ -25,6 +25,8 @@
         #input-processor-cells = <0>;
         min-drag-distance = <75>;
         raw-counts-per-distance-unit = <16>;
+        threshold-bypass-ms = <3000>;
+        threshold-bypass-layers = <MOUSE>;
     };
 };
 
