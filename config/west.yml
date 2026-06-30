@@ -8,7 +8,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: amgskobo
       url-base: https://github.com/amgskobo
-
+    - name: yamaryu211
+      url-base: https://github.com/yamaryu211
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -23,7 +24,9 @@ manifest:
     - name: zmk-input-inertia
       remote: amgskobo
       revision: main  
-
+    - name: zmk-input-processor-temp-layer-threshold
+      remote: yamaryu211
+      revision: feat/zmk0.4
   self:
     path: config
     
