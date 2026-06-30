@@ -1,5 +1,0 @@
-config ZMK_INPUT_PROCESSOR_DRAG_SCROLL
-    bool "Drag distance gated temporary layer input processor"
-    depends on ZMK_POINTING
-    depends on !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
-    default y
