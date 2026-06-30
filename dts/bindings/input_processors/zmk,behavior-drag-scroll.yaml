@@ -1,0 +1,11 @@
+description: Temporary layer input processor gated by relative drag distance
+
+compatible: "zmk,behavior-drag-scroll"
+
+include: ip_zero_param.yaml
+
+properties:
+  min-drag-distance:
+    type: int
+    default: 0
+    description: Accumulated relative X/Y movement required before activating the layer.

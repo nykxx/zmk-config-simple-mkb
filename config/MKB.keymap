@@ -18,6 +18,29 @@
 #define BT 8
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
+// AML発動までの移動量定義
+/ {
+    zip_drag_scroll: zip_drag_scroll {
+        compatible = "zmk,behavior-drag-scroll";
+        #input-processor-cells = <0>;
+        min-drag-distance = <1200>;
+    };
+};
+
+&zip_temp_layer {
+    excluded-positions = <
+        0  // ESC
+        9  // F(Prev)
+        10 // W(Next)
+        21 // S(左クリック)
+        22 // H(中クリック)
+        23 // "(右クリック)
+        24 // Shift
+    >;
+
+    require-prior-idle-ms = <300>;
+};
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -35,7 +58,7 @@
         layers = <MOUSE>, <MOUSE_NUM>;
         input-processors = <&zip_inertia>;
     };
-    input-processors = <&zip_temp_layer_threshold MOUSE 5000>, <&zip_inertia>;
+    input-processors = <&zip_drag_scroll>, <&zip_temp_layer MOUSE 5000>, <&zip_inertia>;
 };
 
 &trackball_scroller {
@@ -61,49 +84,9 @@
 
 // マウスキー入力のXXXms後にマウスレイヤーを抜ける
 &mkp_input_listener {
-  input-processors = <&zip_temp_layer MOUSE 10000>;
+  input-processors = <&zip_temp_layer MOUSE 5000>;
 };
 
-&zip_temp_layer {
-    excluded-positions = <
-        0  // ESC
-        9  // F(Prev)
-        10 // W(Next)
-        21 // S(左クリック)
-        22 // H(中クリック)  
-        23 // "(右クリック)
-        24 // Shift
-    >;
-
-    require-prior-idle-ms = <200>;
-};
-
-/ {
-zip_temp_layer_threshold: zip_temp_layer_threshold {
-        compatible = "zmk,input-processor-temp-layer-threshold";
-        #input-processor-cells = <2>;
-        
-        // AML発動に必要な累積移動量
-        threshold = <250>;
-        
-        // 以下で指定したキー以外を押すとAML解除
-        excluded-positions = <
-            0  // ESC
-            9  // F(Prev)
-            10 // W(Next)
-            21 // S(左クリック)
-            22 // H(中クリック)  
-            23 // "(右クリック)
-            24 // Shift
-        >;
-        
-        // キー入力から200ms間はAMLを発動しない
-        require-prior-idle-ms = <200>;
-
-        // 蓄積された移動量をリセットするまでの時間
-        reset-timeout-ms = <5000>;
-    };
-};
 /**************************************************************************/
 
 / {
