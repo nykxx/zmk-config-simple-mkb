@@ -23,7 +23,7 @@
     zip_aml_threshold: zip_aml_threshold {
         compatible = "zmk,input-processor-zip-aml-threshold";
         #input-processor-cells = <0>;
-        min-movement = <1200>;
+        min-movement = <800>;
         threshold-bypass-ms = <3000>;
         threshold-bypass-layers = <MOUSE>;
     };
